@@ -1,0 +1,48 @@
+CAL(1)                         MCS-284 Commands Manual                     CAL(1)
+
+NAME
+     cal - displays a calendar
+
+SYNOPSIS
+     cal [[month] year]
+     cal -m month [year]
+
+DESCRIPTION
+     The cal utility displays a simple calendar in traditional format.
+
+     The options are as follows:
+
+     -m month
+             Display the specified month.
+
+     A single parameter specifies the year (1753-9999) to be displayed; note the
+     year must be fully specified: "cal 89" will not display a calendar for 1989.
+     Two parameters denote the month and year; the month is either a number
+     between 1 and 12, or a full or abbreviated name as specified by the current
+     locale.  Month and year default to those of the current system clock and
+     time zone (so "cal -m 8" will display a calendar for the month of August in
+     the current year). Month can be written as both numeric value or scripting
+     value. If you want to call a month by how they are written in English, you only
+     need to make sure that the first three charaters are correct (January is written
+     as jan). The function is not case sensitive.
+
+     A year starts on January 1.
+
+SEE ALSO
+     calendar(3), strftime(3)
+
+HISTORY
+     A cal command appeared in Version 5 AT&T UNIX and later in BSD UNIX.
+     The output of the cal command is supposed to be bit for bit compatible to
+     the original Unix cal command, because its output is processed by other
+     programs like CGI scripts, that should not be broken. Therefore it will
+     always output 8 lines, even if only 7 contain data. This extra blank
+     line also appears with the original cal command, at least on Solaris 8
+
+AUTHORS
+     hle5@gustavus.edu
+
+BUGS
+     This program can only perform a subset of the BSD cal program.
+
+MCS-284                           Sep 15, 2020                          MCS-284
